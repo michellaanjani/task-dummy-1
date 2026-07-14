@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id="sale_report_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[strong[text()='Order Date:']]" position="after">
+            <div class="row mt32 mb32" id="test_inherit">
+                <div class="col-auto col-3 mw-100 mb-2">
+                    <strong>Sale Description:</strong>
+                    <p class="m-0" t-field="doc.sale_description"/>
+                </div>               
+            </div>
+        </xpath>
+
+        <xpath expr="//div[strong[text()='Order Date:']]" position="before">
+            <xpath expr="//div[strong[text()='Salesperson:']]" position="move" />
+        </xpath>
+
+
+    </template>
+</odoo>
